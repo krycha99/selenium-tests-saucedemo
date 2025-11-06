@@ -8,6 +8,13 @@ def driver():
     service = Service(ChromeDriverManager().install())
     options = webdriver.ChromeOptions()
 
+    prefs = {
+            "credentials_enable_service": False,
+            "profile.password_manager_enabled": False,
+            "profile.password_manager_leak_detection": False
+    }
+    options.add_experimental_option("prefs", prefs)
+
     driver = webdriver.Chrome(service=service, options=options)
     yield driver
     driver.quit()
