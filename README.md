@@ -1,0 +1,1 @@
+UI Automation Demo Project for https://www.saucedemo.com
